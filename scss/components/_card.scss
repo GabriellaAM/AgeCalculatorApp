@@ -1,0 +1,68 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.container {
+    display: flex;
+    flex-flow: column;
+    width: min(430px, 70%);
+    min-height: auto;
+    align-self: center;
+    background-color: $white;
+    border-radius: 10px 10px 80px 10px; 
+    padding: 20px;
+}
+
+.input-area {
+    min-height: auto;
+    display: flex;
+    flex-flow: row;
+    gap: 15px;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 80px;
+    min-height: 33px;
+    outline: none;
+    border: 1px solid  $lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    color: $offblack;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+label {
+    color: $smokeygrey;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+::placeholder {
+    color: $smokeygrey;
+}
+
+.response-area {
+    display: flex;
+    flex-flow: column;
+    min-height: auto;
+    font-size: 4.2rem;
+    font-weight: 800;
+    font-style: italic;
+    margin: 20px;
+    padding-top: 25px;
+    border-top: 1px solid $lightgrey;
+    color: $offblack;
+    margin: 10px;
+    gap: 0px;
+}
+
+span {
+    color: $purple;
+}
