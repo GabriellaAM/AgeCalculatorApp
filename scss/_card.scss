@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.container {
+    display: flex;
+    flex-flow: column;
+    width: min(400px, 50%);
+    min-height: auto;
+    align-self: center;
+    background-color: $white;
+    border-radius: 10px 10px 80px 10px; 
+}
+
+.input-area {
+    height: 100px;
+}
+
+.response-area {
+    height: 170px;
+}
