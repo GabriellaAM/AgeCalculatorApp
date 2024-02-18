@@ -9,15 +9,24 @@
 }
 
 body {
+    @include flex(center, center);
     min-height: 100vh;
     width: 100%;
-    display: flex;
     flex-flow: column;
-    align-items: center;
-    justify-content: center;
     background-color: $lightgrey;
 }
 
 html {
     font-size: 62.5%;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }

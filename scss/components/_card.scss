@@ -1,6 +1,28 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins' as *;
 
+@keyframes cair {
+    0% {
+        transform: translateY(-100%);
+      }
+      20% {
+        transform: translateY(10%);
+      }
+      40% {
+        transform: translateY(-5%);
+      }
+      60% {
+        transform: translateY(2%);
+      }
+      80% {
+        transform: translateY(-1%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+  }
+  
+
 .container {
     display: flex;
     flex-flow: column;
@@ -8,8 +30,16 @@
     min-height: auto;
     align-self: center;
     background-color: $white;
-    border-radius: 10px 10px 80px 10px; 
+    border-radius: 10px 10px 80px 10px;
     padding: 20px;
+    position: relative;
+    animation: cair 2.5s ease-out;
+    animation-fill-mode: forwards;
+    display: none;
+}
+
+.active {
+    display: block;
 }
 
 .input-area {
@@ -25,17 +55,22 @@ input {
     width: 80px;
     min-height: 33px;
     outline: none;
-    border: 1px solid  $lightgrey;
+    border: 1px solid $lightgrey;
     border-radius: 5px;
     padding: 5px;
     padding-left: 10px;
     color: $offblack;
+    cursor: pointer;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     appearance: none;
+}
+
+input:focus {
+    border: 1px solid $purple;
 }
 
 label {
@@ -46,6 +81,26 @@ label {
 
 ::placeholder {
     color: $smokeygrey;
+}
+
+button {
+    @include flex(center, center);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-radius: 50px;
+    background-color: $purple;
+    right: 20px;
+    bottom: 160px;
+    
+        img {
+            height: 50%;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: $offblack;
+        }
 }
 
 .response-area {
@@ -60,7 +115,10 @@ label {
     border-top: 1px solid $lightgrey;
     color: $offblack;
     margin: 10px;
-    gap: 0px;
+
+    p {
+        margin: -10px 0 -10px 0;
+    }
 }
 
 span {
