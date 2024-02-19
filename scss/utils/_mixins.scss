@@ -1,5 +1,13 @@
+@use 'breakpoint' as *;
+
 @mixin flex($justifyValue, $alignValue) {
     display: flex;
     justify-content: $justifyValue;
     align-items: $alignValue;
+}
+
+@mixin mobile-view {
+    @media (max-width: $breakpoint-mobile){
+        @content;
+    }
 }
