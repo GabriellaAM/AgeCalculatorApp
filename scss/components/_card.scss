@@ -1,5 +1,6 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins' as *;
+@use '../utils/breakpoint' as *;
 
 @keyframes cair {
     0% {
@@ -36,6 +37,10 @@
     animation: cair 2.5s ease-out;
     animation-fill-mode: forwards;
     display: none;
+
+    @include mobile-view() {
+        width: min(430px, 90%);
+    }
 }
 
 .active {
@@ -49,6 +54,11 @@
     gap: 15px;
     margin: 10px;
     margin-bottom: 15px;
+
+    @include mobile-view() {
+        @include flex(center, center);
+        padding-bottom: 40px;
+    }
 }
 
 input {
@@ -70,7 +80,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input:focus {
-    border: 1px solid $purple;
+    border: 1px solid $purpleContraste;
+}
+
+input.active {
+    border: 1px solid $lightred;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 label {
@@ -79,11 +95,18 @@ label {
     letter-spacing: 2px;
 }
 
+label.active {
+    color: $lightred;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+}
+
 ::placeholder {
     color: $smokeygrey;
 }
 
-button {
+.arrow {
     @include flex(center, center);
     width: 50px;
     height: 50px;
@@ -94,12 +117,18 @@ button {
     bottom: 160px;
     
         img {
-            height: 50%;
+            height: 75%;
+            margin-left: -2.5%;
         }
 
         &:hover {
             cursor: pointer;
             background-color: $offblack;
+        }
+
+        @include mobile-view() {
+            right: 43%;
+            bottom: 175px;
         }
 }
 
@@ -119,8 +148,33 @@ button {
     p {
         margin: -10px 0 -10px 0;
     }
+
+    @include mobile-view() {
+        padding-top: 40px;
+    }
 }
 
 span {
     color: $purple;
+}
+
+.error-messageday {
+    color: $lightred;
+    font-style: italic;
+    font-size: 0.7rem;
+    padding-left: 2px;
+}
+
+.error-messagemonth {
+    color: $lightred;
+    font-style: italic;
+    font-size: 0.7rem;
+    padding-left: 2px;
+}
+
+.error-messageyear {
+    color: $lightred;
+    font-style: italic;
+    font-size: 0.7rem;
+    padding-left: 2px;
 }

@@ -33,6 +33,11 @@
   animation-fill-mode: forwards;
   display: none;
 }
+@media (max-width: 530px) {
+  .container {
+    width: min(430px, 90%);
+  }
+}
 
 .active {
   display: block;
@@ -45,6 +50,14 @@
   gap: 15px;
   margin: 10px;
   margin-bottom: 15px;
+}
+@media (max-width: 530px) {
+  .input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+  }
 }
 
 input {
@@ -66,13 +79,25 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input:focus {
-  border: 1px solid hsl(259, 100%, 65%);
+  border: 1px solid hsl(259, 93%, 73%);
+}
+
+input.active {
+  border: 1px solid hsl(0, 100%, 67%);
+  margin-top: 0;
+  padding-top: 0;
 }
 
 label {
   color: hsl(0, 1%, 44%);
   font-size: 0.8rem;
   letter-spacing: 2px;
+}
+
+label.active {
+  color: hsl(0, 100%, 67%);
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 ::-moz-placeholder {
@@ -83,7 +108,7 @@ label {
   color: hsl(0, 1%, 44%);
 }
 
-button {
+.arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,12 +120,19 @@ button {
   right: 20px;
   bottom: 160px;
 }
-button img {
-  height: 50%;
+.arrow img {
+  height: 75%;
+  margin-left: -2.5%;
 }
-button:hover {
+.arrow:hover {
   cursor: pointer;
   background-color: hsl(0, 0%, 8%);
+}
+@media (max-width: 530px) {
+  .arrow {
+    right: 43%;
+    bottom: 175px;
+  }
 }
 
 .response-area {
@@ -119,9 +151,35 @@ button:hover {
 .response-area p {
   margin: -10px 0 -10px 0;
 }
+@media (max-width: 530px) {
+  .response-area {
+    padding-top: 40px;
+  }
+}
 
 span {
   color: hsl(259, 100%, 65%);
+}
+
+.error-messageday {
+  color: hsl(0, 100%, 67%);
+  font-style: italic;
+  font-size: 0.7rem;
+  padding-left: 2px;
+}
+
+.error-messagemonth {
+  color: hsl(0, 100%, 67%);
+  font-style: italic;
+  font-size: 0.7rem;
+  padding-left: 2px;
+}
+
+.error-messageyear {
+  color: hsl(0, 100%, 67%);
+  font-style: italic;
+  font-size: 0.7rem;
+  padding-left: 2px;
 }
 
 * {
@@ -139,7 +197,7 @@ body {
   min-height: 100vh;
   width: 100%;
   flex-flow: column;
-  background-color: hsl(0, 3%, 92%);
+  background-color: hsl(259, 93%, 73%);
 }
 
 html {
@@ -151,8 +209,14 @@ html {
   text-align: center;
   position: absolute;
   bottom: 0;
+  color: black;
+  letter-spacing: 0.3px;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=main.css.map */

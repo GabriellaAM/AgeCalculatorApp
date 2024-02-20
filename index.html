@@ -21,28 +21,31 @@
     <div class="input-area">
 
       <div class="inputdia">
-        <label for="dia" class="legenda">DAY</label> <br />
+        <label for="dia" class="legenda">DAY</label> <br/> 
         <input type="number" id="dia" name="dia" class="dia" placeholder="DD">
+        <div class="error-messageday"></div>
       </div>
 
       <div class="inputmes">
         <label for="mes" class="legenda">MONTH</label> <br />
         <input type="number" id="mes" name="mes" class="mes" placeholder="MM">
+        <div class="error-messagemonth"></div>
       </div>
 
       <div class="inputano">
         <label for="ano" class="legenda">YEAR</label> <br />
         <input type="number" id="ano" name="ano" class="ano" placeholder="YYYY">
+        <div class="error-messageyear"></div>
       </div>
 
     </div>
 
-    <button><img src="./assets/images/icon-arrow.svg" alt="Botão para realizar o cálculo."></button>
+    <button class="arrow"><img src="./assets/images/icon-arrow.svg" alt="Botão para realizar o cálculo."></button>
 
     <div class="response-area">
-      <p><span>--</span> years</p>
-      <p><span>--</span> months</p>
-      <p><span>--</span> days</p>
+      <p><span class="response-years">--</span> years</p>
+      <p><span class="response-months">--</span> months</p>
+      <p><span class="response-days">--</span> days</p>
     </div>
 
   </div>
@@ -51,6 +54,8 @@
     Challenge by <a href="https://www.frontendmentor.io/" target="_blank" class="link">Frontend Mentor</a>.
     Coded by <a href="https://github.com/GabriellaAM" class="link">Gabriella Melo</a>.
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
   <script src="./script.js" defer></script>
 
