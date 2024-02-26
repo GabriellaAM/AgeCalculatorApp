@@ -48,16 +48,51 @@
   display: flex;
   flex-flow: row;
   gap: 15px;
-  margin: 10px;
-  margin-bottom: 15px;
+  margin: 10px 10px 15px 10px;
 }
 @media (max-width: 530px) {
   .input-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
   }
+}
+
+.labelinputdia {
+  padding-left: 1px;
+  padding-bottom: 3px;
+  color: hsl(0, 1%, 44%);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.labelinputmes {
+  padding-left: 1px;
+  padding-bottom: 3px;
+  color: hsl(0, 1%, 44%);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.labelinputano {
+  padding-left: 1px;
+  padding-bottom: 3px;
+  color: hsl(0, 1%, 44%);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.labelinputdia.active {
+  color: hsl(0, 100%, 67%);
+}
+
+.labelinputmes.active {
+  color: hsl(0, 100%, 67%);
+}
+
+.labelinputano.active {
+  color: hsl(0, 100%, 67%);
 }
 
 input {
@@ -66,8 +101,8 @@ input {
   outline: none;
   border: 1px solid hsl(0, 3%, 92%);
   border-radius: 5px;
-  padding: 5px;
-  padding-left: 10px;
+  padding: 0px 5px 0px 10px;
+  margin-top: 0;
   color: hsl(0, 0%, 8%);
   cursor: pointer;
 }
@@ -88,16 +123,16 @@ input.active {
   padding-top: 0;
 }
 
-label {
-  color: hsl(0, 1%, 44%);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+.dia.active {
+  border: 1px solid hsl(0, 100%, 67%);
 }
 
-label.active {
-  color: hsl(0, 100%, 67%);
-  margin-bottom: 0;
-  padding-bottom: 0;
+.mes.active {
+  border: 1px solid hsl(0, 100%, 67%);
+}
+
+.ano.active {
+  border: 1px solid hsl(0, 100%, 67%);
 }
 
 ::-moz-placeholder {
@@ -162,24 +197,27 @@ span {
 }
 
 .error-messageday {
-  color: hsl(0, 100%, 67%);
   font-style: italic;
   font-size: 0.7rem;
   padding-left: 2px;
+  color: transparent;
+  padding-top: 3px;
 }
 
 .error-messagemonth {
-  color: hsl(0, 100%, 67%);
   font-style: italic;
   font-size: 0.7rem;
   padding-left: 2px;
+  color: transparent;
+  padding-top: 3px;
 }
 
 .error-messageyear {
-  color: hsl(0, 100%, 67%);
   font-style: italic;
   font-size: 0.7rem;
   padding-left: 2px;
+  padding-top: 3px;
+  color: transparent;
 }
 
 * {
