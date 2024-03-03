@@ -18,10 +18,12 @@ arrowButton.addEventListener('click', () => {
   if (!(inserirdia == 0 || isNaN(inserirdia)) && !(inserirmes == 0 || isNaN(inserirmes)) && !(inserirano == 0 || isNaN(inserirano))) {
 
     if (validarData() && calcularIdade()) {
+
       const qtdDias = calcularIdade();
       respYears.textContent = qtdDias.years;
       respMonths.textContent = qtdDias.months;
       respDays.textContent = qtdDias.days;
+
     } else {
       calcularIdade();
       validarData();
@@ -32,39 +34,71 @@ arrowButton.addEventListener('click', () => {
     let campoBorda;
     let labelRed;
 
-    if (inputDay == 0 || isNaN(inputDay)) {
-
+    if (inserirdia == 0) {
       campoBorda = document.querySelectorAll('input')[0];
       labelRed = document.querySelector('.labelinputdia');
 
       errorMessageDivDay.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivDay.innerText = "Must be a valid day";
 
       campoBorda.classList.add('active');
       labelRed.classList.add('active');
     }
 
-    if (inputMonth == 0 || isNaN(inputMonth)) {
+    if (isNaN(inserirdia)) {
+      campoBorda = document.querySelectorAll('input')[0];
+      labelRed = document.querySelector('.labelinputdia');
 
+      errorMessageDivDay.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivDay.innerText = "This field is required";
+
+      campoBorda.classList.add('active');
+      labelRed.classList.add('active');
+    }
+
+    if (inserirmes == 0) {
       campoBorda = document.querySelectorAll('input')[1];
       labelRed = document.querySelector('.labelinputmes');
 
       errorMessageDivMonth.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivMonth.innerText = "Must be a valid month";
 
       campoBorda.classList.add('active');
       labelRed.classList.add('active');
     }
 
-    if (inputYear == 0 || isNaN(inputYear)) {
+    if (isNaN(inserirmes)) {
+      campoBorda = document.querySelectorAll('input')[1];
+      labelRed = document.querySelector('.labelinputmes');
 
+      errorMessageDivMonth.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivMonth.innerText = "This field is required";
+
+      campoBorda.classList.add('active');
+      labelRed.classList.add('active');
+    }
+
+    if (inserirano == 0) {
       campoBorda = document.querySelectorAll('input')[2];
       labelRed = document.querySelector('.labelinputano');
 
       errorMessageDivYear.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivYear.innerText = "Must be a valid year";
 
       campoBorda.classList.add('active');
       labelRed.classList.add('active');
     }
 
+    if (isNaN(inserirano)) {
+      campoBorda = document.querySelectorAll('input')[2];
+      labelRed = document.querySelector('.labelinputano');
+
+      errorMessageDivYear.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivYear.innerText = "This field is required";
+
+      campoBorda.classList.add('active');
+      labelRed.classList.add('active');
+    }
   }
 });
 
@@ -159,6 +193,7 @@ function calcularIdade() {
 }
 
 function validarData() {
+
   const dia = parseInt(inputDay.value);
   const mes = parseInt(inputMonth.value);
   const ano = parseInt(inputYear.value);
@@ -210,6 +245,7 @@ function validarData() {
   }
 
   if (mes === 2 && dia > 29) {
+
     labelRed = document.querySelector('.labelinputdia');
 
     errorMessageDivDay.style.color = "hsl(0, 100%, 67%)";
@@ -226,6 +262,7 @@ function validarData() {
   }
 
   if (mes === 2 && dia === 29 && !anoBissexto(ano)) {
+
     labelRed = document.querySelector('.labelinputdia');
 
     errorMessageDivDay.style.color = "hsl(0, 100%, 67%)";
@@ -253,6 +290,7 @@ function validarData() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
   let card = document.querySelector('.container');
 
   card.classList.add('active');
@@ -290,6 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function errorMessage(inputField) {
+
   const valor = parseFloat(inputField.value);
   let campoBorda;
   let labelRed;
@@ -305,19 +344,40 @@ function errorMessage(inputField) {
     labelRed = document.querySelector('.labelinputano');
   }
 
-  if (valor == 0 || isNaN(valor)) {
+  if (isNaN(valor)) {
     if (inputField === inputDay) {
       errorMessageDivDay.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivDay.innerText = "This field is required";
     } else if (inputField === inputMonth) {
       errorMessageDivMonth.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivMonth.innerText = "This field is required";
     } else if (inputField === inputYear) {
       errorMessageDivYear.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivYear.innerText = "This field is required";
     }
 
     campoBorda.classList.add('active');
     labelRed.classList.add('active');
+  }
 
-  } else {
+  if (valor == 0) {
+    if (inputField === inputDay) {
+      errorMessageDivDay.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivDay.innerText = "Must be a valid day";
+    } else if (inputField === inputMonth) {
+      errorMessageDivMonth.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivMonth.innerText = "Must be a valid month";
+    } else if (inputField === inputYear) {
+      errorMessageDivYear.style.color = "hsl(0, 100%, 67%)";
+      errorMessageDivYear.innerText = "Must be a valid year";
+    }
+
+    campoBorda.classList.add('active');
+    labelRed.classList.add('active');
+  }
+
+  else {
+
     if (inputField === inputDay) {
       errorMessageDivDay.style.color = "transparent";
     } else if (inputField === inputMonth) {
