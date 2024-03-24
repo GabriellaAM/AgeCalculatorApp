@@ -83,15 +83,11 @@
   letter-spacing: 2px;
 }
 
-.labelinputdia.active {
+.activelabelinput1 {
   color: hsl(0, 100%, 67%);
 }
 
-.labelinputmes.active {
-  color: hsl(0, 100%, 67%);
-}
-
-.labelinputano.active {
+.activelabelinput2 {
   color: hsl(0, 100%, 67%);
 }
 
@@ -117,22 +113,16 @@ input:focus {
   border: 1px solid hsl(259, 93%, 73%);
 }
 
-input.active {
+.activeinput1 {
   border: 1px solid hsl(0, 100%, 67%);
   margin-top: 0;
   padding-top: 0;
 }
 
-.dia.active {
+.activeinput2 {
   border: 1px solid hsl(0, 100%, 67%);
-}
-
-.mes.active {
-  border: 1px solid hsl(0, 100%, 67%);
-}
-
-.ano.active {
-  border: 1px solid hsl(0, 100%, 67%);
+  margin-top: 0;
+  padding-top: 0;
 }
 
 ::-moz-placeholder {
@@ -198,26 +188,35 @@ span {
 
 .error-messageday {
   font-style: italic;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   padding-left: 2px;
   color: transparent;
   padding-top: 3px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .error-messagemonth {
   font-style: italic;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   padding-left: 2px;
   color: transparent;
   padding-top: 3px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .error-messageyear {
   font-style: italic;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   padding-left: 2px;
   padding-top: 3px;
   color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 * {

@@ -90,15 +90,11 @@
     letter-spacing: 2px;
 }
 
-.labelinputdia.active {
+.activelabelinput1 {
     color: $lightred;
 }
 
-.labelinputmes.active {
-    color: $lightred;
-}
-
-.labelinputano.active {
+.activelabelinput2 {
     color: $lightred;
 }
 
@@ -124,22 +120,16 @@ input:focus {
     border: 1px solid $purpleContraste;
 }
 
-input.active {
+.activeinput1 {
     border: 1px solid $lightred;
     margin-top: 0;
     padding-top: 0;
 }
 
-.dia.active {
+.activeinput2 {
     border: 1px solid $lightred;
-}
-
-.mes.active {
-    border: 1px solid $lightred;
-}
-
-.ano.active {
-    border: 1px solid $lightred;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 ::placeholder {
@@ -200,24 +190,27 @@ span {
 
 .error-messageday {
     font-style: italic;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     padding-left: 2px;
     color: transparent;
     padding-top: 3px;
+    user-select: none;
 }
 
 .error-messagemonth {
     font-style: italic;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     padding-left: 2px;
     color: transparent;
     padding-top: 3px;
+    user-select: none;
 }
 
 .error-messageyear {
     font-style: italic;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     padding-left: 2px;
     padding-top: 3px;
     color: transparent;
+    user-select: none;
 }
