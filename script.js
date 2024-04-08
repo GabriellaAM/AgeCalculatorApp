@@ -25,8 +25,8 @@ arrowButton.addEventListener('click', () => {
       respDays.textContent = qtdDias.days;
 
     } else {
-      calcularIdade();
       validarData();
+      calcularIdade();
     }
 
   } else {
