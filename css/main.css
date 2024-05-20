@@ -83,7 +83,7 @@
   letter-spacing: 2px;
 }
 
-.activelabelinput1 {
+.activelabelinput {
   color: hsl(0, 100%, 67%);
 }
 
@@ -192,6 +192,9 @@ span {
   padding-left: 2px;
   color: transparent;
   padding-top: 3px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .error-messagemonth {
@@ -200,6 +203,9 @@ span {
   padding-left: 2px;
   color: transparent;
   padding-top: 3px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .error-messageyear {
@@ -208,6 +214,9 @@ span {
   padding-left: 2px;
   padding-top: 3px;
   color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 * {
