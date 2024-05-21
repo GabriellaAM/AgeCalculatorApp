@@ -145,6 +145,14 @@ function calcularIdade() {
     campoBorda = document.querySelectorAll('input')[2];
     labelRed = document.querySelector('.labelinputano');
 
+    if (labelRed && labelRed.classList.contains('activelabelinput2')) {
+      labelRed.classList.remove('activelabelinput2');
+    }
+
+    if (campoBorda && campoBorda.classList.contains('activeinput2')) {
+      campoBorda.classList.remove('activeinput2');
+    }
+
     errorMessageDivYear.style.color = "hsl(0, 100%, 67%)";
     errorMessageDivYear.innerText = "Must be in the past";
     errorMessageDivMonth.style.color = "transparent";
@@ -161,13 +169,13 @@ function calcularIdade() {
 
     labelRed = document.querySelector('.activelabelinput2');
 
-    if (labelRed.classList.contains('activelabelinput2')) {
+    if (labelRed && labelRed.classList.contains('activelabelinput2')) {
       labelRed.classList.remove('activelabelinput2');
     }
 
     campoBorda = document.querySelector('.activeinput2');
 
-    if (campoBorda.classList.contains('activeinput2')) {
+    if (campoBorda && campoBorda.classList.contains('activeinput2')) {
       campoBorda.classList.remove('activeinput2');
     }
 
@@ -189,13 +197,13 @@ function calcularIdade() {
 
     labelRed = document.querySelector('.activelabelinput2');
 
-    if (labelRed.classList.contains('activelabelinput2')) {
+    if (labelRed && labelRed.classList.contains('activelabelinput2')) {
       labelRed.classList.remove('activelabelinput2');
     }
 
     campoBorda = document.querySelector('.activeinput2');
 
-    if (campoBorda.classList.contains('activeinput2')) {
+    if (campoBorda && campoBorda.classList.contains('activeinput2')) {
       campoBorda.classList.remove('activeinput2');
     }
 
@@ -250,20 +258,20 @@ function validarData() {
 
   if (dia < 1 || dia > 31) {
 
-    if (labelRedAno.classList.contains('activelabelinput')) {
+    if (labelRedAno && labelRedAno.classList.contains('activelabelinput')) {
       labelRedAno.classList.remove('activelabelinput');
     }
 
-    if (labelRedMes.classList.contains('activelabelinput')) {
+    if (labelRedMes && labelRedMes.classList.contains('activelabelinput')) {
       labelRedMes.classList.remove('activelabelinput');
     }
 
-    if (campoBordaMes.classList.contains('activeinput1')) {
+    if (campoBordaMes && campoBordaMes.classList.contains('activeinput1')) {
       campoBordaMes.classList.remove('activeinput1');
     }
 
-    if (campoBordaAno.classList.contains('activeinput1')) {
-      campoBordaMes.classList.remove('activeinput1');
+    if (campoBordaAno && campoBordaAno.classList.contains('activeinput1')) {
+      campoBordaAno.classList.remove('activeinput1');
     }
 
     errorMessageDivDay.style.color = "hsl(0, 100%, 67%)";
@@ -279,19 +287,19 @@ function validarData() {
 
   if (mes < 1 || mes > 12) {
 
-    if (labelRedDia.classList.contains('activelabelinput')) {
+    if (labelRedDia && labelRedDia.classList.contains('activelabelinput')) {
       labelRedDia.classList.remove('activelabelinput');
     }
 
-    if (labelRedAno.classList.contains('activelabelinput')) {
+    if (labelRedAno && labelRedAno.classList.contains('activelabelinput')) {
       labelRedAno.classList.remove('activelabelinput');
     }
 
-    if (campoBordaAno.classList.contains('activeinput1')) {
+    if (campoBordaAno && campoBordaAno.classList.contains('activeinput1')) {
       campoBordaAno.classList.remove('activeinput1');
     }
 
-    if (campoBordaDia.classList.contains('activeinput1')) {
+    if (campoBordaDia && campoBordaDia.classList.contains('activeinput1')) {
       campoBordaDia.classList.remove('activeinput1');
     }
 
@@ -304,7 +312,7 @@ function validarData() {
     labelRedMes.classList.add('activelabelinput');
 
     return false;
-  }
+  } 
 
   if (dia === 31 && [4, 6, 9, 11].includes(mes)) {
 
