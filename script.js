@@ -19,6 +19,8 @@ arrowButton.addEventListener('click', () => {
 
     if (validarData() && calcularIdade()) {
 
+      limparErros()
+
       const qtdDias = calcularIdade();
       respYears.textContent = qtdDias.years;
       respMonths.textContent = qtdDias.months;
@@ -33,6 +35,19 @@ arrowButton.addEventListener('click', () => {
     errorMessageValidDay();
   }
 });
+
+function limparErros() {
+
+  document.querySelector('.activelabelinput2').classList.remove('activelabelinput2')
+  document.querySelector('.activeinput2').classList.remove('activeinput2')
+  document.querySelector('.activelabelinput').classList.remove('activelabelinput')
+  document.querySelector('.activeinput1').classList.remove('activeinput1')
+
+  errorMessageDivMonth.style.color = "transparent";
+  errorMessageDivYear.style.color = "transparent";
+  errorMessageDivDay.style.color = "transparent";
+
+}
 
 function errorMessageValidDay() {
 
