@@ -27,8 +27,8 @@ arrowButton.addEventListener('click', () => {
       respDays.textContent = qtdDias.days;
 
     } else {
-      validarData();
       calcularIdade();
+      validarData();
     }
 
   } else {
@@ -38,10 +38,10 @@ arrowButton.addEventListener('click', () => {
 
 function limparErros() {
 
-  document.querySelector('.activelabelinput2').classList.remove('activelabelinput2')
-  document.querySelector('.activeinput2').classList.remove('activeinput2')
-  document.querySelector('.activelabelinput').classList.remove('activelabelinput')
-  document.querySelector('.activeinput1').classList.remove('activeinput1')
+  document.querySelectorAll('.activelabelinput2').forEach(label => label.classList.remove('activelabelinput2'))
+  document.querySelectorAll('.activeinput2').forEach(input => input.classList.remove('activeinput2'))
+  document.querySelectorAll('.activelabelinput').forEach(label => label.classList.remove('activelabelinput'))
+  document.querySelectorAll('.activeinput1').forEach(input => input.classList.remove('activeinput1'))
 
   errorMessageDivMonth.style.color = "transparent";
   errorMessageDivYear.style.color = "transparent";
@@ -140,6 +140,8 @@ function diasNoMes(mes, ano) {
 }
 
 function calcularIdade() {
+
+  limparErros()
 
   const diaAtual = new Date().getDate();
   const mesAtual = new Date().getMonth() + 1;
