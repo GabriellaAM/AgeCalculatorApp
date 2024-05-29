@@ -239,11 +239,12 @@ function calcularIdade() {
   }
 
   qtdAnos = anoAtual - anoNascimento;
+  
   if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
     qtdAnos--;
   }
 
-  if (mesAtual <= mesNascimento) {
+  if (mesAtual < mesNascimento) {
     qtdMeses = (12 - mesNascimento) + mesAtual;
   } else {
     qtdMeses = mesAtual - mesNascimento;
