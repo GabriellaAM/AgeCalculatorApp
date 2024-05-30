@@ -13,7 +13,7 @@
 
 ## Visão Geral
 
-<img src="./design/AgeCalculator.png">
+<img src="./designs/AgeCalculator.png">
 
 ## O desafio
 
